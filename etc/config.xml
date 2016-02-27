@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Voicyou Softwares . All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <!-- <default>
+        <cron>
+            <module>
+                <is_enabled>0</is_enabled>
+            </module>
+		</cron>
+    </default> -->
+</config>
