@@ -3,7 +3,7 @@
     <acl>
         <resources>
             <resource id="Magento_Adminhtml::admin">
-                <resource id="Voicyou_Cron::{{gridname}}" title="{{gridname}}" sortOrder="100"/>
+                <resource id="Voicyou_Cron::cronlisting" title="Voicyou Cron Listing" sortOrder="100"/>
  <!--AddMenuAcl-->
             </resource>
         </resources>
