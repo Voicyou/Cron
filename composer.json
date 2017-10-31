@@ -2,7 +2,8 @@
   "name": "voicyou/cron",
   "description": "This is a Magento 2 Module for listing all the cron jobs that are installed in your Magento 2 store. ",
   "require": {
-    "php": "~5.5.0|~5.6.0|~7.0.0"
+    "php": "~5.5.0|~5.6.0|~7.0.0",
+    "voicyou/cron":"~1.0.0"
   },
   "type": "magento2-module",
   "version": "1.6.0",
