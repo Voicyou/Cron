@@ -2,7 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Acl/etc/acl.xsd">
     <acl>
         <resources>
-            <resource id="Magento_Adminhtml::admin">
+            <resource id="Magento_Adminhtml::admin" title = "Voicyou Cron Listing Admin" >
                 <resource id="Voicyou_Cron::cronlisting" title="Voicyou Cron Listing" sortOrder="100"/>
  <!--AddMenuAcl-->
             </resource>
