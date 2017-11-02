@@ -19,11 +19,30 @@ class Index extends \Magento\Backend\Block\Widget\Grid\Extended
      * @var \Magento\Backend\Helper\Data
      */
     protected $backendHelper;
-     
-     protected $cronData;
-
-     protected $dataCollection;
-     protected $dataObjectFactory;
+    /**
+     *
+     * @var \Voicyou\Cron\Block\Adminhtml\Cron\CronData
+     */
+    protected $cronData;
+    /**
+     *
+     * @var \Magento\Framework\Data\Collection
+     */
+    protected $dataCollection;
+    /**
+     *
+     * @var \Magento\Framework\DataObjectFactory 
+     */
+    protected $dataObjectFactory;
+    /**
+     * 
+     * @param \Magento\Backend\Block\Template\Context $context
+     * @param \Magento\Backend\Helper\Data $backendHelper
+     * @param \Magento\Framework\Data\Collection $dataCollection
+     * @param \Magento\Framework\DataObjectFactory $dataObjectFactory
+     * @param \Voicyou\Cron\Block\Adminhtml\Cron\CronData $cronData
+     * @param array $data
+     */
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
         \Magento\Backend\Helper\Data $backendHelper,    
@@ -42,18 +61,20 @@ class Index extends \Magento\Backend\Block\Widget\Grid\Extended
 
     /**
      * @return void
-     */
+    */
    protected function _construct()
    {
         parent::_construct();
         $this->setPagerVisibility(false); // remove the pagination option from the page
         $this->setFilterVisibility(false); // remove the filter row from the grid
    }
- /**
-     * @return $this
-     */
-    protected function _prepareCollection()
-    {
+ 
+   /**
+    * 
+    * @return collection
+    */
+   protected function _prepareCollection()
+   {
         $count = 1;
         $rows = $this->cronData->getCronData();
         $collection = $this->dataCollection;
@@ -72,9 +93,12 @@ class Index extends \Magento\Backend\Block\Widget\Grid\Extended
         return parent::_prepareCollection();
     }
 
+    /**
+     * 
+     * @return array
+     */
     protected function _prepareColumns()
     {
-       // die('Prepare Columns');
       $this->addColumn("name", array(
             "header" => __("Job Name"),
             "align" => "left",
@@ -105,12 +129,19 @@ class Index extends \Magento\Backend\Block\Widget\Grid\Extended
         return parent::_prepareColumns();
     }
     
+    /**
+     * 
+     * @param type $item
+     */
     public function getRowUrl($item) {
         parent::getRowUrl($item);
     }
-    
+    /**
+     * 
+     * @return string
+     */
     public function getMainButtonsHtml()
     {
-    return '';
+        return '';
     }
 }

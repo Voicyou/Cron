@@ -5,9 +5,21 @@
 namespace Voicyou\Cron\Block\Adminhtml\Cron;
 class CronData extends \Magento\Framework\View\Element\Template
 {
+    /**
+     *
+     * @var type 
+     */
     protected $_config;
 
-    public function __construct( \Magento\Framework\View\Element\Template\Context $context,\Magento\Cron\Model\ConfigInterface $config,array $data = [])
+    /**
+     * 
+     * @param \Magento\Framework\View\Element\Template\Context $context
+     * @param \Magento\Cron\Model\ConfigInterface $config
+     * @param type $data
+     */
+    public function __construct(\Magento\Framework\View\Element\Template\Context $context,
+                                \Magento\Cron\Model\ConfigInterface $config,
+                                 array $data = [])
     {
         parent::__construct($context, $data);
         $this->_config = $config;
@@ -15,6 +27,10 @@ class CronData extends \Magento\Framework\View\Element\Template
         $data = $this->_request->getParam('group');
     }
     
+    /**
+     * 
+     * @return type
+     */
     function getCronData()
     {
         return $this->_config->getJobs();

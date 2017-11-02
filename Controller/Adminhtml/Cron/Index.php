@@ -9,12 +9,14 @@ use Magento\Framework\View\Result\PageFactory;
 class Index extends \Magento\Backend\App\Action
 {
 
-	/**
-     * @var PageFactory
-     */
+    /**
+     *
+     * @var Magento\Framework\View\Result\PageFactory 
+     */	
     protected $resultPageFactory;
 
     /**
+     * 
      * @param Context $context
      * @param PageFactory $resultPageFactory
      */
@@ -25,24 +27,13 @@ class Index extends \Magento\Backend\App\Action
         parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
     }
-    /**
-     * Check the permission to run it
-     *
-     * @return bool
-     */
-   /*  protected function _isAllowed()
-    {
-        return $this->_authorization->isAllowed('Magento_Cms::page');
-    } */
 
     /**
-     * Index action
-     *
-     * @return \Magento\Backend\Model\View\Result\Page
+     * 
+     * @return type
      */
     public function execute()
     {
-        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
         $resultPage->addBreadcrumb(__('Voicyou Cron Listing'), __('Voicyou Cron Listing'));
         $resultPage->getConfig()->getTitle()->prepend(__('Voicyou Cron Listing'));
